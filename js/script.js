@@ -54,14 +54,16 @@ function initMobileNav() {
    DISPATCH ACCORDION (mobile drawer submenu)
 ----------------------------------------------------------- */
 function initDispatchAccordion() {
-  const btn = document.querySelector('.mobile-drawer__expand');
-  const submenu = document.querySelector('.mobile-drawer__submenu');
-  if (!btn || !submenu) return;
-
-  btn.addEventListener('click', () => {
-    const isOpen = submenu.classList.toggle('is-open');
-    btn.setAttribute('aria-expanded', isOpen);
-    btn.textContent = isOpen ? '−' : '+';
+  // Handles every dropdown group in the mobile drawer (Dispatch, Gallery, ...)
+  document.querySelectorAll('.mobile-drawer__group').forEach(group => {
+    const btn = group.querySelector('.mobile-drawer__expand');
+    const submenu = group.querySelector('.mobile-drawer__submenu');
+    if (!btn || !submenu) return;
+    btn.addEventListener('click', () => {
+      const isOpen = submenu.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', isOpen);
+      btn.textContent = isOpen ? '−' : '+';
+    });
   });
 }
 
@@ -106,7 +108,7 @@ function initFilters() {
 }
 
 /* -----------------------------------------------------------
-   GALLERY LIGHTBOX (gallery.html)
+   GALLERY LIGHTBOX (gallery-photos.html)
 ----------------------------------------------------------- */
 function initGalleryLightbox() {
   const items = Array.from(document.querySelectorAll('.masonry__item'));
@@ -548,7 +550,7 @@ function initFeatureRotator() {
       return spotSlide(pick(cards), null);
     },
     async gallery() {
-      const d = await getDoc('/gallery.html');
+      const d = await getDoc('/gallery-photos.html');
       const items = Array.from(d.querySelectorAll('.masonry__item')).sort(() => Math.random() - 0.5);
       for (const it of items.slice(0, 12)) {
         const img = it.querySelector('img');
@@ -556,7 +558,7 @@ function initFeatureRotator() {
         if (src && await imageOk(src)) {
           return slide({
             tag: 'From The Gallery', title: clean(it.getAttribute('data-caption')) || clean(img.alt) || 'Gallery',
-            href: '/gallery.html', linkText: 'Open Gallery →', image: src, alt: clean(img.alt)
+            href: '/gallery-photos.html', linkText: 'Open Gallery →', image: src, alt: clean(img.alt)
           });
         }
       }

@@ -60,7 +60,13 @@ section { scroll-margin-top: 90px; }
         </div>
       </div>
       <a href="/spots.html">Spots</a>
-      <a href="/gallery.html">Gallery</a>
+      <div class="nav-dropdown">
+  <a href="/gallery-photos.html" class="nav-dropdown__trigger">Gallery <span class="nav-dropdown__caret" aria-hidden="true">▾</span></a>
+  <div class="nav-dropdown__menu">
+    <a href="/gallery-photos.html">Photos</a>
+    <a href="/gallery-videos.html">Videos</a>
+  </div>
+</div>
       <a href="/merch.html">Merch</a>
       <a href="/contact.html">Contact</a>
     </nav>
@@ -85,7 +91,16 @@ section { scroll-margin-top: 90px; }
     </div>
   </div>
   <a href="/spots.html">Spots</a>
-  <a href="/gallery.html">Gallery</a>
+  <div class="mobile-drawer__group">
+    <div class="mobile-drawer__group-head">
+      <a href="/gallery-photos.html">Gallery</a>
+      <button class="mobile-drawer__expand" aria-expanded="false" aria-label="Toggle Gallery submenu">+</button>
+    </div>
+    <div class="mobile-drawer__submenu">
+      <a href="/gallery-photos.html">Photos</a>
+      <a href="/gallery-videos.html">Videos</a>
+    </div>
+  </div>
   <a href="/merch.html">Merch</a>
   <a href="/contact.html">Contact</a>
   <a href="https://linktr.ee/jahhatmedia" target="_blank" rel="noopener">@JAHHAT.MEDIA ↗</a>
@@ -106,6 +121,8 @@ section { scroll-margin-top: 90px; }
   <ul class="policy-jump" aria-label="Language">
     <li><a href="#english">English</a></li>
     <li><a href="#bahasa-malaysia" lang="ms">Bahasa Malaysia</a></li>
+    <li><a href="/terms.html">Terms of Service</a></li>
+    <li><a href="/index.html">Homepage</a></li>
   </ul>
 
   <!-- ====================== ENGLISH VERSION ====================== -->
@@ -255,10 +272,11 @@ section { scroll-margin-top: 90px; }
       <div class="footer-col">
         <h4>Navigate</h4>
         <ul>
+          <li><a href="/index.html">Home</a></li>
           <li><a href="/about.html">About</a></li>
           <li><a href="/dispatch/">Dispatch</a></li>
           <li><a href="/spots.html">Spots</a></li>
-          <li><a href="/gallery.html">Gallery</a></li>
+          <li><a href="/gallery-photos.html">Gallery</a></li>
           <li><a href="/merch.html">Merch</a></li>
           <li><a href="/privacy.html">Privacy Policy</a></li>
           <li><a href="/terms.html">Terms of Service</a></li>
@@ -285,6 +303,7 @@ section { scroll-margin-top: 90px; }
     <div class="footer-bottom">
       <span>© 2026 Jahhat Media. All rights reserved.</span>
       <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Service</a>
       <a href="#top">Back To Top ↑</a>
       <span>Malaysia · Southeast Asia</span>
     </div>
